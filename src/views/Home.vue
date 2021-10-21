@@ -1,18 +1,34 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <section class="home d-flex">
+        <section class="banner">
+            <h1 class="mb-5">A better way <br/> to enjoy every day</h1>
+            <div class="headline mb-5">Be the first to know when we launch.</div>
+            <button-request-invite class="mt-5"></button-request-invite>
+        </section>
+    </section>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import ButtonRequestInvite from '@/components/buttons/ButtonRequestInvite.vue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+    ButtonRequestInvite,
   },
 };
 </script>
+<style lang="scss" scoped>
+.home {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.banner {
+    text-align: center;
+
+    h1 {
+        font-size: 3rem;
+    }
+}
+</style>
