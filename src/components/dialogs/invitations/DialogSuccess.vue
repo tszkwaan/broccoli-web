@@ -49,15 +49,12 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/assets/sass/utilities/_variables.scss";
+
 .v-dialog > .v-card > .v-card__text {
     padding-top: 20px;
 }
 #dialog-title {
-    font-weight: 300;
-}
-</style>
-<style>
-.field-title {
-    font-weight: 500;
+    font-weight: $font-weight-dialog-title;
 }
 </style>

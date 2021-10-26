@@ -103,21 +103,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "~@/assets/sass/utilities/_variables.scss";
+
 .v-dialog > .v-card > .v-card__text {
     padding-top: 20px;
 }
 #dialog-title {
-    font-weight: 300;
+    font-weight: $font-weight-dialog-title;
 }
 .v-card__actions {
     flex-direction: column;
 }
 .error--text {
     font-style: italic;
-}
-</style>
-<style>
-.field-title {
-    font-weight: 500;
 }
 </style>

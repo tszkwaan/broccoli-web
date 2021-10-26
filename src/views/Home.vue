@@ -47,8 +47,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-@import "~@/assets/stylesheet/constants.scss";
-@import "~@/assets/stylesheet/common.scss";
+@import "~@/assets/sass/utilities/_variables.scss";
+@import "~@/assets/sass/utilities/_mixins.scss";
 
 .home {
     height: 100%;

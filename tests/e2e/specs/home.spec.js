@@ -7,7 +7,7 @@ describe('Invitation section', () => {
     cy.visit(url);
   });
 
-  it('invitation banner section should be displayed', () => {
+  it('banner section should be displayed', () => {
     cy.get('h1')
       .contains('A better way').contains('to enjoy every day')
       .should('be.visible');
