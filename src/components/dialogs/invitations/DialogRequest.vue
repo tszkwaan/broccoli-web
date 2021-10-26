@@ -80,7 +80,7 @@ export default {
           this.$refs.buttonSend.stopLoading();
         });
     },
-    showDialog() {
+    openDialog() {
       this.isDisplay = true;
     },
     submitInvitation() {

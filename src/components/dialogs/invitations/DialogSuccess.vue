@@ -38,7 +38,7 @@ export default {
   watch: {
   },
   methods: {
-    showDialog() {
+    openDialog() {
       this.isDisplay = true;
     },
     closeDialog() {
