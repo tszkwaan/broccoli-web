@@ -15,5 +15,4 @@ describe('FormInvitation.vue', () => {
     wrapper.vm.showError(errorText);
     expect(wrapper.vm.formErrorMsg).toMatch(errorText);
   });
-
 });

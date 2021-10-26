@@ -27,5 +27,4 @@ describe('DialogSuccess.vue', () => {
     wrapper.vm.closeDialog();
     expect(wrapper.vm.isDisplay).toBe(false);
   });
-
 });
