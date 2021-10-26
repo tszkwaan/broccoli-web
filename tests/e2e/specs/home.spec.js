@@ -1,6 +1,6 @@
 // https://docs.cypress.io/api/introduction/api.html
 
-const url = 'http://localhost:8081';
+const url = 'http://localhost:8080';
 
 describe('Invitation section', () => {
   beforeEach(() => {

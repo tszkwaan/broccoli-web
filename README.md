@@ -21,6 +21,9 @@ npm run test:unit
 ```
 
 ### Run your end-to-end tests
+
+1. Make sure the port 8080 is not in-use.
+
 ```
 npm run test:e2e
 ```
