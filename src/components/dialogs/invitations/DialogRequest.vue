@@ -18,7 +18,10 @@
         />
       </v-card-text>
       <v-card-actions>
-        <button-send @click="submitInvitation" />
+        <button-send
+          ref="buttonSend"
+          @click="submitInvitation"
+        />
         <div
           v-show="dialogErrorMsg"
           class="v-messages__message error--text mt-5 mb-2"
@@ -34,6 +37,7 @@
 import FormInvitation from '@/components/forms/FormInvitation.vue';
 import ButtonSend from '@/components/buttons/ButtonSend.vue';
 import ApiInvitations from '@/api/invitations';
+import { SUCCESS_CREATE, ERROR_BAD_REQUEST } from '@/constants/httpStatus';
 
 export default {
   name: 'DialogInviteRequest',
@@ -59,11 +63,21 @@ export default {
     createInvitation() {
       const form = this.$refs.formInvitation.getFormValue();
       ApiInvitations.createInvitation(form)
-        .then(() => {
-          this.$emit('create');
+        .then((res) => {
+          const statusCode = res.status;
+          if (statusCode === SUCCESS_CREATE) {
+            this.$emit('create');
+          } else {
+            throw new Error(`status code is ${statusCode}'`);
+          }
         })
         .catch((err) => {
-          this.dialogErrorMsg = err.response.data.errorMessage;
+          if (err && err.response.status === ERROR_BAD_REQUEST) {
+            this.dialogErrorMsg = err.response.data.errorMessage;
+          }
+        })
+        .finally(() => {
+          this.$refs.buttonSend.stopLoading();
         });
     },
     showDialog() {
@@ -71,6 +85,7 @@ export default {
     },
     submitInvitation() {
       if (this.$refs.formInvitation.validateForm()) {
+        this.$refs.buttonSend.startLoading();
         this.createInvitation();
       }
     },
