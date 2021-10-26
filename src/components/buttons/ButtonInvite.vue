@@ -1,6 +1,5 @@
 <template>
   <button-base
-    :is-block="true"
     label="Request Invite"
     @click="onClick"
   />
