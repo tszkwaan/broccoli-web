@@ -1,5 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import DialogRequest from '@/components/dialogs/invitations/DialogRequest.vue';
+import FormInvitation from '@/components/forms/formInvitation.vue';
 
 describe('DialogRequest.vue', () => {
   it('openDialog() should update isDisplay to true', () => {
@@ -9,23 +10,13 @@ describe('DialogRequest.vue', () => {
           isDisplay: false,
         };
       },
+      stubs: {
+        'form-invitation': FormInvitation,
+      },
     });
 
     wrapper.vm.openDialog();
     expect(wrapper.vm.isDisplay).toBe(true);
-  });
-
-  it('closeDialog() should update isDisplay to false', () => {
-    const wrapper = shallowMount(DialogRequest, {
-      data() {
-        return {
-          isDisplay: true,
-        };
-      },
-    });
-
-    wrapper.vm.closeDialog();
-    expect(wrapper.vm.isDisplay).toBe(false);
   });
 
   it('resetErrorMsg() should clear dialogErrorMsg', () => {
@@ -34,6 +25,9 @@ describe('DialogRequest.vue', () => {
         return {
           dialogErrorMsg: 'Email not matched!',
         };
+      },
+      stubs: {
+        'form-invitation': FormInvitation,
       },
     });
 
