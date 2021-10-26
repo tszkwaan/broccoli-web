@@ -1,5 +1,6 @@
 <template>
   <button-base
+    data-test="button-invite"
     label="Request Invite"
     @click="onClick"
   />

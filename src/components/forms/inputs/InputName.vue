@@ -1,5 +1,6 @@
 <template>
   <v-text-field
+    :data-test="`input-name${dataTestSuffix}`"
     v-model="value"
     :rules="rules"
     label="Full name"
@@ -14,6 +15,10 @@ export default {
   components: {
   },
   props: {
+    dataTestSuffix: {
+      type: String,
+      default: '',
+    },
   },
   data() {
     return {

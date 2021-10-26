@@ -3,13 +3,17 @@
     ref="formInvitation"
     lazy-validation
   >
-    <input-name ref="inputName" />
+    <input-name
+      ref="inputName"
+      data-test-suffix="-invitation"/>
     <input-email
       ref="inputEmail"
+      data-test-suffix="-invitation"
       @change="onEmailChange"
     />
     <input-email
       ref="inputConfirmEmail"
+      data-test-suffix="-confirm-invitation"
       label="Confirm Email"
       @change="onEmailChange"
     />

@@ -2,6 +2,7 @@
   <button-base
     :is-block="true"
     :is-loading="isLoading"
+    data-test="button-send"
     label="Send"
     @click="onClick"
   />

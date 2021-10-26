@@ -4,7 +4,7 @@
     content-class="form-dialog"
     width="500"
   >
-    <v-card>
+    <v-card data-test="dialog-request">
       <v-card-title
         id="dialog-title"
         class="title justify-center"

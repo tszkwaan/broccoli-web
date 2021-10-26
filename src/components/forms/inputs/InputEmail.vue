@@ -1,5 +1,6 @@
 <template>
   <v-text-field
+    :data-test="`input-email${dataTestSuffix}`"
     v-model="value"
     :label="label"
     :rules="rules"
@@ -16,10 +17,14 @@ export default {
     label: {
       type: String,
       default: 'Email',
-      emailValue: {
-        type: String,
-        default: '',
-      },
+    },
+    dataTestSuffix: {
+      type: String,
+      default: '',
+    },
+    emailValue: {
+      type: String,
+      default: '',
     },
   },
   data() {
