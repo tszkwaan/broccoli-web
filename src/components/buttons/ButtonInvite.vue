@@ -1,12 +1,16 @@
 <template>
-    <button-base @click="onClick" :is-block="true" label="Request Invite"></button-base>
+  <button-base
+    :is-block="true"
+    label="Request Invite"
+    @click="onClick"
+  />
 </template>
 
 <script>
 import ButtonBase from '@/components/buttons/ButtonBase.vue';
 
 export default {
-  name: 'button-invite',
+  name: 'ButtonInvite',
   components: {
     ButtonBase,
   },

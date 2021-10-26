@@ -1,15 +1,16 @@
 <template>
-    <v-text-field
-        v-model="value"
-        label="Full name"
-        :rules="rules" />
+  <v-text-field
+    v-model="value"
+    label="Full name"
+    :rules="rules"
+  />
 </template>
 
 <script>
 import { NAME_MIN_LENGTH } from '@/constants/form';
 
 export default {
-  name: 'input-name',
+  name: 'InputName',
   components: {
   },
   props: {
@@ -22,19 +23,19 @@ export default {
       ],
     };
   },
+  watch: {
+    name: {
+      handler() {
+        this.$emit('change');
+      },
+    },
+  },
   methods: {
     getValue() {
       return this.value;
     },
     resetValue() {
       this.value = '';
-    },
-  },
-  watch: {
-    name: {
-      handler() {
-        this.$emit('change');
-      },
     },
   },
 };

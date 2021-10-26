@@ -1,24 +1,31 @@
 <template>
-    <v-dialog v-model="isDisplay" content-class="form-dialog" width="500">
-        <v-card>
-            <v-card-title id="dialog-title" class="title justify-center">
-                All done!
-            </v-card-title>
-            <v-card-text class="text-center">
-                You will be one of the first to experience Broccoli & Co. when we launch.
-            </v-card-text>
-            <v-card-actions>
-                <button-ok @click="closeDialog"></button-ok>
-            </v-card-actions>
-        </v-card>
-    </v-dialog>
+  <v-dialog
+    v-model="isDisplay"
+    content-class="form-dialog"
+    width="500"
+  >
+    <v-card>
+      <v-card-title
+        id="dialog-title"
+        class="title justify-center"
+      >
+        All done!
+      </v-card-title>
+      <v-card-text class="text-center">
+        You will be one of the first to experience Broccoli & Co. when we launch.
+      </v-card-text>
+      <v-card-actions>
+        <button-ok @click="closeDialog" />
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
 import ButtonOk from '@/components/buttons/ButtonOk.vue';
 
 export default {
-  name: 'dialog-success',
+  name: 'DialogSuccess',
   components: {
     ButtonOk,
   },
@@ -28,6 +35,8 @@ export default {
       isDisplay: false,
     };
   },
+  watch: {
+  },
   methods: {
     showDialog() {
       this.isDisplay = true;
@@ -35,8 +44,6 @@ export default {
     closeDialog() {
       this.isDisplay = false;
     },
-  },
-  watch: {
   },
 };
 </script>

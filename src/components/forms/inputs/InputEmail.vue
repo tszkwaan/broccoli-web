@@ -1,14 +1,15 @@
 <template>
-    <v-text-field
-        v-model="value"
-        :label="label"
-        :rules="rules" />
+  <v-text-field
+    v-model="value"
+    :label="label"
+    :rules="rules"
+  />
 </template>
 
 <script>
 
 export default {
-  name: 'input-email',
+  name: 'InputEmail',
   components: {
   },
   props: {
@@ -29,19 +30,19 @@ export default {
       ],
     };
   },
+  watch: {
+    value: {
+      handler() {
+        this.$emit('change');
+      },
+    },
+  },
   methods: {
     getValue() {
       return this.value;
     },
     resetValue() {
       this.value = '';
-    },
-  },
-  watch: {
-    value: {
-      handler() {
-        this.$emit('change');
-      },
     },
   },
 };

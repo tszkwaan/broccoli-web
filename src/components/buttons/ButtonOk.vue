@@ -1,12 +1,16 @@
 <template>
-    <button-base @click="onClick" :is-block="true" label="Ok"></button-base>
+  <button-base
+    :is-block="true"
+    label="Ok"
+    @click="onClick"
+  />
 </template>
 
 <script>
 import ButtonBase from '@/components/buttons/ButtonBase.vue';
 
 export default {
-  name: 'button-ok',
+  name: 'ButtonOk',
   components: {
     ButtonBase,
   },

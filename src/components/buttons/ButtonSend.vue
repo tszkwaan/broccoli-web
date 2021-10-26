@@ -1,12 +1,16 @@
 <template>
-    <button-base @click="onClick" :is-block="true" label="Send"></button-base>
+  <button-base
+    :is-block="true"
+    label="Send"
+    @click="onClick"
+  />
 </template>
 
 <script>
 import ButtonBase from '@/components/buttons/ButtonBase.vue';
 
 export default {
-  name: 'button-send',
+  name: 'ButtonSend',
   components: {
     ButtonBase,
   },

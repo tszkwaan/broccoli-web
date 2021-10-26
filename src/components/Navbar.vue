@@ -1,20 +1,20 @@
 <template>
-    <v-app-bar
-      app
-      color="white"
-      fixed
-    >
-      <div class="d-flex align-center navbrand">
-        BROCCOLI & CO.
-      </div>
+  <v-app-bar
+    app
+    color="white"
+    fixed
+  >
+    <div class="d-flex align-center navbrand">
+      BROCCOLI & CO.
+    </div>
 
-      <v-spacer></v-spacer>
-    </v-app-bar>
+    <v-spacer />
+  </v-app-bar>
 </template>
 
 <script>
 export default {
-  name: 'navbar',
+  name: 'Navbar',
   methods: {
   },
 };

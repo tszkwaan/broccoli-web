@@ -1,15 +1,25 @@
 <template>
-    <v-form ref="formInvitation" lazy-validation>
-        <input-name ref="inputName"></input-name>
-        <input-email ref="inputEmail"
-        @change="onEmailChange"></input-email>
-        <input-email ref="inputConfirmEmail" label="Confirm Email"
-        @change="onEmailChange">
-        </input-email>
-        <div v-show="formErrorMsg" class="v-messages__message error--text">
-            {{ formErrorMsg }}
-        </div>
-    </v-form>
+  <v-form
+    ref="formInvitation"
+    lazy-validation
+  >
+    <input-name ref="inputName" />
+    <input-email
+      ref="inputEmail"
+      @change="onEmailChange"
+    />
+    <input-email
+      ref="inputConfirmEmail"
+      label="Confirm Email"
+      @change="onEmailChange"
+    />
+    <div
+      v-show="formErrorMsg"
+      class="v-messages__message error--text"
+    >
+      {{ formErrorMsg }}
+    </div>
+  </v-form>
 </template>
 
 <script>
@@ -17,7 +27,7 @@ import InputName from '@/components/forms/inputs/InputName.vue';
 import InputEmail from '@/components/forms/inputs/InputEmail.vue';
 
 export default {
-  name: 'form-invitation',
+  name: 'FormInvitation',
   components: {
     InputName,
     InputEmail,

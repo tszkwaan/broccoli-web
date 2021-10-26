@@ -1,15 +1,23 @@
 <template>
-    <section class="home d-flex">
-        <section class="banner">
-            <h1 class="mb-5">A better way <br/> to enjoy every day</h1>
-            <div class="headline mb-5">Be the first to know when we launch.</div>
-            <button-invite class="mt-5" @click="showInvitationDialog">
-            </button-invite>
-        </section>
-        <dialog-invite-request ref="dialogInviteRequest" @create="transitToSuccess">
-        </dialog-invite-request>
-        <dialog-invite-success ref="dialogSuccess"></dialog-invite-success>
+  <section class="home d-flex">
+    <section class="banner">
+      <h1 class="mb-5">
+        A better way <br> to enjoy every day
+      </h1>
+      <div class="headline mb-5">
+        Be the first to know when we launch.
+      </div>
+      <button-invite
+        class="mt-5"
+        @click="showInvitationDialog"
+      />
     </section>
+    <dialog-invite-request
+      ref="dialogInviteRequest"
+      @create="transitToSuccess"
+    />
+    <dialog-invite-success ref="dialogSuccess" />
+  </section>
 </template>
 
 <script>
@@ -18,7 +26,7 @@ import DialogInviteRequest from '@/components/dialogs/invitations/DialogRequest.
 import DialogInviteSuccess from '@/components/dialogs/invitations/DialogSuccess.vue';
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     ButtonInvite,
     DialogInviteRequest,

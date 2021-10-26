@@ -1,25 +1,33 @@
 <template>
-    <v-dialog v-model="isDisplay" content-class="form-dialog" width="500">
-        <v-card>
-            <v-card-title id="dialog-title" class="title justify-center">
-                Request an invite
-            </v-card-title>
-            <v-card-text>
-                <form-invitation
-                    ref="formInvitation"
-                    @change="resetErrorMsg"
-                />
-            </v-card-text>
-            <v-card-actions>
-                <div>
-                    <button-send @click="submitInvitation"></button-send>
-                </div>
-                <div v-show="dialogErrorMsg" class="v-messages__message error--text mt-5 mb-2">
-                    {{ dialogErrorMsg }}
-                </div>
-            </v-card-actions>
-        </v-card>
-    </v-dialog>
+  <v-dialog
+    v-model="isDisplay"
+    content-class="form-dialog"
+    width="500"
+  >
+    <v-card>
+      <v-card-title
+        id="dialog-title"
+        class="title justify-center"
+      >
+        Request an invite
+      </v-card-title>
+      <v-card-text>
+        <form-invitation
+          ref="formInvitation"
+          @change="resetErrorMsg"
+        />
+      </v-card-text>
+      <v-card-actions>
+        <button-send @click="submitInvitation" />
+        <div
+          v-show="dialogErrorMsg"
+          class="v-messages__message error--text mt-5 mb-2"
+        >
+          {{ dialogErrorMsg }}
+        </div>
+      </v-card-actions>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>
@@ -28,7 +36,7 @@ import ButtonSend from '@/components/buttons/ButtonSend.vue';
 import ApiInvitations from '@/api/invitations';
 
 export default {
-  name: 'dialog-invite-request',
+  name: 'DialogInviteRequest',
   components: {
     FormInvitation,
     ButtonSend,
@@ -39,6 +47,13 @@ export default {
       isDisplay: false,
       dialogErrorMsg: '',
     };
+  },
+  watch: {
+    isDisplay() {
+      if (!this.isDisplay) {
+        this.resetForm();
+      }
+    },
   },
   methods: {
     createInvitation() {
@@ -67,13 +82,6 @@ export default {
     },
     resetErrorMsg() {
       this.dialogErrorMsg = '';
-    },
-  },
-  watch: {
-    isDisplay() {
-      if (!this.isDisplay) {
-        this.resetForm();
-      }
     },
   },
 };

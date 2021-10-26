@@ -1,12 +1,18 @@
 <template>
-    <v-btn @click="onClick" :primary="isPrimary" :dark="isDark" :block="isBlock">
-        {{ label }}
-    </v-btn>
+  <v-btn
+    :primary="isPrimary"
+    :dark="isDark"
+    :block="isBlock"
+    :loading="isLoading"
+    @click="onClick"
+  >
+    {{ label }}
+  </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'button-base',
+  name: 'ButtonBase',
   props: {
     isPrimary: {
       default: true,
@@ -23,6 +29,10 @@ export default {
     label: {
       default: '',
       type: String,
+    },
+    isLoading: {
+      default: false,
+      type: Boolean,
     },
   },
   methods: {
