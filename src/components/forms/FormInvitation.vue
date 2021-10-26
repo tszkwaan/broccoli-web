@@ -5,7 +5,8 @@
   >
     <input-name
       ref="inputName"
-      data-test-suffix="-invitation"/>
+      data-test-suffix="-invitation"
+    />
     <input-email
       ref="inputEmail"
       data-test-suffix="-invitation"

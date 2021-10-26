@@ -1,6 +1,6 @@
 import { shallowMount } from '@vue/test-utils';
 import DialogRequest from '@/components/dialogs/invitations/DialogRequest.vue';
-import FormInvitation from '@/components/forms/formInvitation.vue';
+import FormInvitation from '@/components/forms/FormInvitation.vue';
 
 describe('DialogRequest.vue', () => {
   it('openDialog() should update isDisplay to true', () => {

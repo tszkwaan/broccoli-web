@@ -1,7 +1,7 @@
 <template>
   <v-text-field
-    :data-test="`input-name${dataTestSuffix}`"
     v-model="value"
+    :data-test="`input-name${dataTestSuffix}`"
     :rules="rules"
     label="Full name"
   />
