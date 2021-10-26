@@ -1,13 +1,13 @@
 <template>
   <v-text-field
     v-model="value"
-    label="Full name"
     :rules="rules"
+    label="Full name"
   />
 </template>
 
 <script>
-import { NAME_MIN_LENGTH } from '@/constants/form';
+import { NAME_MIN_LENGTH } from '@/constants/formValidation';
 
 export default {
   name: 'InputName',
